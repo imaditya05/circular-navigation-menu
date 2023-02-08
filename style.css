@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #654ea3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eaafc8,
+    #654ea3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eaafc8,
+    #654ea3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.menus {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menus ul li {
+  list-style: none;
+  position: absolute;
+  transform-origin: 150px;
+  font-size: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 50%;
+  left: 0;
+  top: 40%;
+  transform: rotate(0deg) translate(120px);
+  transition-delay: calc(0.1 s * var(--i));
+  transition: 0.4s;
+  text-align: center;
+}
+.menus ul li:hover {
+  background: #ffafbd;
+  background: -webkit-linear-gradient(to right, #ffc3a0, #ffafbd);
+  background: linear-gradient(to right, #ffc3a0, #ffafbd);
+  scale: 1.05;
+}
+
+.menus ul li i {
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  color: azure;
+}
+
+.menus.active ul li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menus .toggler {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #ffafbd;
+  background: -webkit-linear-gradient(to right, #ffc3a0, #ffafbd);
+  background: linear-gradient(to right, #ffc3a0, #ffafbd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s transform;
+}
+.menus .toggler i {
+  font-size: 3rem;
+  color: aliceblue;
+}
+
+.menus.active .toggler {
+  transform: rotate(315deg);
+}
+
+.footer {
+  color: aliceblue;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  bottom: 20px;
+}
